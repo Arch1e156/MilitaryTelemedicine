@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Consultations{% endblock %}
+{% block content %}
+  <h2>Pending Consultations</h2>
+  <ul>
+    {% for consultation in consultations %}
+    <li>
+      <a href="{{ url_for('chat', consultation_id=consultation.id) }}">{{ consultation.body }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

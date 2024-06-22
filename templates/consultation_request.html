@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Consultation Request{% endblock %}
+{% block content %}
+  <h2>Submit a Consultation Request</h2>
+  <form method="POST" action="{{ url_for('consultation_request') }}">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.body.label }} {{ form.body(class="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-primary") }}
+    </div>
+  </form>
+{% endblock %}
